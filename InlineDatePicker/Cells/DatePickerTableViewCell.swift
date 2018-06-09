@@ -1,33 +1,27 @@
 //
-//  DateTableViewCell.swift
+//  DatePickerTableViewCell.swift
 //  InlineDatePicker
 //
-//  Created by Rajtharan Gopal on 07/06/18.
+//  Created by Rajtharan Gopal on 09/06/18.
 //  Copyright © 2018 Rajtharan Gopal. All rights reserved.
 //
 
 import UIKit
 
-class DateTableViewCell: UITableViewCell {
-    
-    let label = UILabel()
+class DatePickerTableViewCell: UITableViewCell {
+
+    let datePicker = UIDatePicker()
     
     // Reuser identifier
     class func reuseIdentifier() -> String {
-        return "DateTableViewCellIdentifier"
+        return "DatePickerTableViewCell"
     }
     
     // Cell height
     class func cellHeight() -> CGFloat {
-        return 44.0
+        return 162.0
     }
-
-    // Awake from nib method
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
+    
     // Default init methods
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -40,22 +34,21 @@ class DateTableViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
-    // Init method for cell
     func initView() {
-        let screenWidth = UIScreen.main.bounds.width
-        label.frame = CGRect(x: 15, y: 5, width: screenWidth - 30, height: 30)
-        contentView.addSubview(label)
-    }
-    
-    // Update text
-    func updateText(text: String) {
-        label.text = text
+        let screenWidth = UIScreen.main.bounds.size.width
+        datePicker.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 162)
+        contentView.addSubview(datePicker)
     }
 
 }
