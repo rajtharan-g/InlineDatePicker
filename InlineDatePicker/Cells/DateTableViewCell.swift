@@ -8,13 +8,31 @@
 
 import UIKit
 
+/// Date Format type
+enum DateFormatType: String {
+    /// Time
+    case time = "HH:mm:ss"
+    
+    /// Date with hours
+    case dateWithTime = "dd-MMM-yyyy  H:mm"
+    
+    /// Date
+    case date = "dd-MMM-yyyy"
+}
+
 class DateTableViewCell: UITableViewCell {
     
-    let label = UILabel()
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     // Reuser identifier
     class func reuseIdentifier() -> String {
         return "DateTableViewCellIdentifier"
+    }
+    
+    // Nib name
+    class func nibName() -> String {
+        return "DateTableViewCell"
     }
     
     // Cell height
@@ -27,18 +45,6 @@ class DateTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    // Default init methods
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        initView()
-    }
-    
-    // Default code method
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -46,16 +52,21 @@ class DateTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    // Init method for cell
-    func initView() {
-        let screenWidth = UIScreen.main.bounds.width
-        label.frame = CGRect(x: 15, y: 5, width: screenWidth - 30, height: 30)
-        contentView.addSubview(label)
-    }
-    
     // Update text
-    func updateText(text: String) {
+    func updateText(text: String, date: Date) {
         label.text = text
+        dateLabel.text = date.convertToString(dateformat: .dateWithTime)
     }
 
+}
+
+extension Date {
+    
+    func convertToString(dateformat formatType: DateFormatType) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = formatType.rawValue
+        let newDate: String = dateFormatter.string(from: self)
+        return newDate
+    }
+    
 }

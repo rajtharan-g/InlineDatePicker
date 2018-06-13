@@ -8,12 +8,24 @@
 
 import UIKit
 
+protocol DatePickerDelegate: class {
+    func didChangeDate(date: Date, indexPath: IndexPath)
+}
+
 class DatePickerTableViewCell: UITableViewCell {
 
-    let datePicker = UIDatePicker()
+    @IBOutlet weak var datePicker: UIDatePicker!
+    
+    var indexPath: IndexPath!
+    weak var delegate: DatePickerDelegate?
     
     // Reuser identifier
     class func reuseIdentifier() -> String {
+        return "DatePickerTableViewCellIdentifier"
+    }
+    
+    // Nib name
+    class func nibName() -> String {
         return "DatePickerTableViewCell"
     }
     
@@ -22,21 +34,9 @@ class DatePickerTableViewCell: UITableViewCell {
         return 162.0
     }
     
-    // Default init methods
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        initView()
-    }
-    
-    // Default code method
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        initView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -46,9 +46,17 @@ class DatePickerTableViewCell: UITableViewCell {
     }
     
     func initView() {
-        let screenWidth = UIScreen.main.bounds.size.width
-        datePicker.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 162)
-        contentView.addSubview(datePicker)
+        datePicker.addTarget(self, action: #selector(dateDidChange), for: .valueChanged)
+    }
+
+    func updateCell(date: Date, indexPath: IndexPath) {
+        datePicker.setDate(date, animated: true)
+        self.indexPath = indexPath
+    }
+    
+    @objc func dateDidChange(_ sender: UIDatePicker) {
+        let indexPathForDisplayDate = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+        delegate?.didChangeDate(date: sender.date, indexPath: indexPathForDisplayDate)
     }
 
 }

@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		8508C0B420CB9A4D00CB0BB2 /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8508C0B320CB9A4D00CB0BB2 /* DatePickerTableViewCell.swift */; };
+		8508C0B720CBDEFF00CB0BB2 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8508C0B620CBDEFF00CB0BB2 /* DateTableViewCell.xib */; };
 		850B38D620C8636500372B52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B38D520C8636500372B52 /* AppDelegate.swift */; };
 		850B38D820C8636500372B52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B38D720C8636500372B52 /* ViewController.swift */; };
 		850B38DD20C8636B00372B52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850B38DC20C8636B00372B52 /* Assets.xcassets */; };
 		850B38E020C8636B00372B52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 850B38DE20C8636B00372B52 /* LaunchScreen.storyboard */; };
 		850B38EA20C8665800372B52 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B38E920C8665800372B52 /* DateTableViewCell.swift */; };
 		850B38EC20C868C200372B52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 850B38EB20C868C200372B52 /* Main.storyboard */; };
+		85D0DBF420CBE1DF00FA83F1 /* DatePickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85D0DBF320CBE1DF00FA83F1 /* DatePickerTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8508C0B320CB9A4D00CB0BB2 /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
+		8508C0B620CBDEFF00CB0BB2 /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
 		850B38D220C8636500372B52 /* InlineDatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InlineDatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		850B38D520C8636500372B52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		850B38D720C8636500372B52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		850B38E120C8636B00372B52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		850B38E920C8665800372B52 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		850B38EB20C868C200372B52 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		85D0DBF320CBE1DF00FA83F1 /* DatePickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 		850D8BD720CAF2C700101A3E /* Xib */ = {
 			isa = PBXGroup;
 			children = (
+				8508C0B620CBDEFF00CB0BB2 /* DateTableViewCell.xib */,
+				85D0DBF320CBE1DF00FA83F1 /* DatePickerTableViewCell.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -155,6 +161,8 @@
 				850B38EC20C868C200372B52 /* Main.storyboard in Resources */,
 				850B38E020C8636B00372B52 /* LaunchScreen.storyboard in Resources */,
 				850B38DD20C8636B00372B52 /* Assets.xcassets in Resources */,
+				8508C0B720CBDEFF00CB0BB2 /* DateTableViewCell.xib in Resources */,
+				85D0DBF420CBE1DF00FA83F1 /* DatePickerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

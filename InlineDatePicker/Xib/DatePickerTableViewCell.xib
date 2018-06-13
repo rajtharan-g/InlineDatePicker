@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DatePickerTableViewCellIdentifier" rowHeight="162" id="u4f-jD-frR" customClass="DatePickerTableViewCell" customModule="InlineDatePicker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u4f-jD-frR" id="Eln-3V-1aN">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="161.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bKk-F4-T7J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                        <date key="date" timeIntervalSinceReferenceDate="550232586.23245502">
+                            <!--2018-06-09 10:23:06 +0000-->
+                        </date>
+                    </datePicker>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="bKk-F4-T7J" secondAttribute="bottom" id="GiA-2D-P2g"/>
+                    <constraint firstAttribute="trailing" secondItem="bKk-F4-T7J" secondAttribute="trailing" id="Xn0-hj-HN5"/>
+                    <constraint firstItem="bKk-F4-T7J" firstAttribute="top" secondItem="Eln-3V-1aN" secondAttribute="top" id="f6x-cL-38k"/>
+                    <constraint firstItem="bKk-F4-T7J" firstAttribute="leading" secondItem="Eln-3V-1aN" secondAttribute="leading" id="jfY-oT-crz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="datePicker" destination="bKk-F4-T7J" id="Mq0-D2-Jdf"/>
+            </connections>
+            <point key="canvasLocation" x="90.5" y="55.5"/>
+        </tableViewCell>
+    </objects>
+</document>
